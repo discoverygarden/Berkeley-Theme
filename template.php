@@ -107,3 +107,36 @@
 function berkeley_theme_preprocess_node(&$variables) {
   unset($variables['content']['links']['node']);
 }
+
+/**
+ * Implements hook_islandora_solr_facet_wrapper().
+ */
+function berkeley_theme_islandora_solr_facet_wrapper($variables) {
+  $author_facet = FALSE;
+  if ($variables['pid'] == 'mods_authorName_ms') {
+    $author_facet = array(
+      'facet-header' => array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => array('berkeley-facet-header'),
+        ),
+        'title' => array(
+          '#type' => 'item',
+          '#title' => $variables['title'],
+          '#description' => t('Includes coauthors and name variants'),
+        ),
+      ),
+    );
+    $author_facet = drupal_render($author_facet);
+  }
+  $output = '<div class="islandora-solr-facet-wrapper">';
+  if ($author_facet) {
+    $output .= $author_facet;
+  }
+  else {
+    $output .= '<h3>' . $variables['title'] . '</h3>';
+  }
+  $output .= $variables['content'];
+  $output .= '</div>';
+  return $output;
+}
