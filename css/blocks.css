@@ -214,3 +214,11 @@ ul.islandora-solr-facet-pages-list li a:hover {
 #islandora-solr-advanced-search-form .islandora-solr-advanced-controls {
   margin-top: 0.5em;
 }
+
+/* line 159, ../sass/blocks.scss */
+.berkeley-facet-header {
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin-bottom: 1.28205em;
+  margin-top: 1.28205em;
+}

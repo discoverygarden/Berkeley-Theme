@@ -146,12 +146,19 @@ ul.islandora-solr-facet-pages-list {
 
 #islandora-solr-advanced-search-form {
   .form-item {
-    display: inline !important; 
-  } 
+    display: inline !important;
+  }
   .form-text {
     width: 37%;
   }
   .islandora-solr-advanced-controls {
-    margin-top: 0.5em; 
+    margin-top: 0.5em;
   }
+}
+
+.berkeley-facet-header {
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin-bottom: 1.28205em;
+  margin-top: 1.28205em;
 }
